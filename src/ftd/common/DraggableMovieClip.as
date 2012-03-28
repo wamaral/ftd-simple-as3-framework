@@ -111,15 +111,16 @@ public class DraggableMovieClip extends MovieClip
 
 	protected function endDrag(e:MouseEvent = null):void
 	{
+		var d:DisplayObject;
 		var vis:Array = new Array();
 		for (var i:int = 0; i < this.dropTargetsToSkip.length; ++i) {
-			var d:DisplayObject = DisplayObject(this.dropTargetsToSkip[i]);
+			d = DisplayObject(this.dropTargetsToSkip[i]);
 			vis.push(d.visible);
 			d.visible = false;
 		}
 		this.stopDrag();
 		for (i = 0; i < this.dropTargetsToSkip.length; ++i) {
-			var d:DisplayObject = DisplayObject(this.dropTargetsToSkip[i]);
+			d = DisplayObject(this.dropTargetsToSkip[i]);
 			d.visible = vis[i];
 		}
 		this.dragStopped.dispatch(this, this.getDropTarget());
