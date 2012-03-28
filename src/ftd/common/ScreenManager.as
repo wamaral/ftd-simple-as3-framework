@@ -43,7 +43,7 @@ public class ScreenManager
 	}
 	
 	
-	public function addScreen(screen:Screen, title = null):void
+	public function addScreen(screen:Screen, title:String = null):void
 	{
 		screen.index = this.screens.length; // before push
 		screen.visible = false;
