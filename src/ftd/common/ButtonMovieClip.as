@@ -16,7 +16,7 @@ public class ButtonMovieClip extends MovieClip
 {
 	public var effects:Array;
 	public var effectsActive:Boolean;
-	public var bringToFrontOnOver:Boolean;
+	public var bringToFrontEnabled:Boolean;
 
 	public var clicked:NativeSignal;
 
@@ -25,7 +25,7 @@ public class ButtonMovieClip extends MovieClip
 		this.buttonMode = true;
 		this.useHandCursor = true;
 
-		this.bringToFrontOnOver = true;
+		this.bringToFrontEnabled = true;
 
 		// default is grow to 105% in .2 second
 		var e:Grow = new Grow(this);
@@ -49,7 +49,7 @@ public class ButtonMovieClip extends MovieClip
 			}
 		}
 
-		if (this.bringToFrontOnOver) {
+		if (this.bringToFrontEnabled) {
 			this.parent.setChildIndex(this, this.parent.numChildren - 1);
 		}
 	}

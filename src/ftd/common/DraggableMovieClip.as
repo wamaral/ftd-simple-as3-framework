@@ -17,7 +17,7 @@ import org.osflash.signals.Signal;
 
 public class DraggableMovieClip extends MovieClip
 {
-	public var allowDepthChange:Boolean;
+	public var bringToFrontEnabled:Boolean;
 	public var allowedDropTargetTypes:Array;
 	public var checkDropTargetImmediateSuperClass:Boolean;
 	public var dropTargetsToSkip:Array;
@@ -102,7 +102,7 @@ public class DraggableMovieClip extends MovieClip
 	protected function beginDrag(e:MouseEvent = null):void
 	{
 		this.beforeDragPos = new Point(this.x,  this.y);
-		if (this.allowDepthChange) {
+		if (this.bringToFrontEnabled) {
 			this.parent.setChildIndex(this, this.parent.numChildren - 1);
 		}
 		this.startDrag(this.lockCenter, this.bounds);
