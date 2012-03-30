@@ -1,7 +1,7 @@
 /**
  * @author Wagner Amaral <wamaral@wamaral.org>
  */
-package ftd.common.efects
+package ftd.common.effects
 {
 import com.greensock.plugins.GlowFilterPlugin;
 import com.greensock.plugins.TweenPlugin;

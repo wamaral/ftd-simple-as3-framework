@@ -6,9 +6,9 @@ package ftd.common
 import flash.display.MovieClip;
 import flash.events.MouseEvent;
 
-import ftd.common.efects.Grow;
+import ftd.common.effects.Grow;
 
-import ftd.common.efects.IEffect;
+import ftd.common.effects.IEffect;
 
 import org.osflash.signals.natives.NativeSignal;
 
