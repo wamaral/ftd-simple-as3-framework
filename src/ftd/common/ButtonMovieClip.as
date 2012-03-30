@@ -45,7 +45,7 @@ public class ButtonMovieClip extends MovieClip
 		if (this.effectsActive) {
 			for (var i:int = 0; i < this.effects.length; ++i) {
 				var eff:IEffect = this.effects[i];
-				eff.over();
+				eff.over(this);
 			}
 		}
 
@@ -59,7 +59,7 @@ public class ButtonMovieClip extends MovieClip
 		if (this.effectsActive) {
 			for (var i:int = 0; i < this.effects.length; ++i) {
 				var eff:IEffect = this.effects[i];
-				eff.out();
+				eff.out(this);
 			}
 		}
 	}

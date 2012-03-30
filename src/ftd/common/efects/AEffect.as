@@ -31,14 +31,14 @@ public class AEffect implements IEffect
 	}
 
 
-	public function over():void
+	public function over(tgt:ButtonMovieClip = null):void
 	{
-		this.tween = new TweenMax(this.target, this.getOverTime(), this.getOverParams());
+		this.tween = new TweenMax(tgt ? tgt : this.target, this.getOverTime(), this.getOverParams());
 	}
 
-	public function out():void
+	public function out(tgt:ButtonMovieClip = null):void
 	{
-		this.tween = new TweenMax(this.target, this.getOutTime(), this.getOutParams());
+		this.tween = new TweenMax(tgt ? tgt : this.target, this.getOutTime(), this.getOutParams());
 	}
 
 

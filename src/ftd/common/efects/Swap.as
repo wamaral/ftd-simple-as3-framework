@@ -18,13 +18,13 @@ public class Swap extends AEffect
 		super(tgt);
 	}
 
-	public override function over():void
+	public override function over(tgt:ButtonMovieClip = null):void
 	{
 		this.overAsset.visible = true;
 		this.outAsset.visible = false;
 	}
 
-	public override function out():void
+	public override function out(tgt:ButtonMovieClip = null):void
 	{
 		this.overAsset.visible = false;
 		this.outAsset.visible = true;
