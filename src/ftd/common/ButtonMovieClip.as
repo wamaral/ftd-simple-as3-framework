@@ -3,7 +3,6 @@
  */
 package ftd.common
 {
-import flash.display.MovieClip;
 import flash.events.MouseEvent;
 
 import ftd.common.effects.Grow;
@@ -12,7 +11,7 @@ import ftd.common.effects.IEffect;
 
 import org.osflash.signals.natives.NativeSignal;
 
-public class ButtonMovieClip extends MovieClip
+public class ButtonMovieClip extends CommonMovieClip
 {
 	public var effects:Array;
 	public var effectsActive:Boolean;
@@ -50,7 +49,7 @@ public class ButtonMovieClip extends MovieClip
 		}
 
 		if (this.bringToFrontEnabled) {
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);
+			this.bringToFront();
 		}
 	}
 

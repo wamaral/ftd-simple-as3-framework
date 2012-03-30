@@ -15,7 +15,7 @@ import flash.utils.getQualifiedSuperclassName;
 
 import org.osflash.signals.Signal;
 
-public class DraggableMovieClip extends MovieClip
+public class DraggableMovieClip extends CommonMovieClip
 {
 	public var bringToFrontEnabled:Boolean;
 	public var allowedDropTargetTypes:Array;
@@ -103,7 +103,7 @@ public class DraggableMovieClip extends MovieClip
 	{
 		this.beforeDragPos = new Point(this.x,  this.y);
 		if (this.bringToFrontEnabled) {
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);
+			this.bringToFront();
 		}
 		this.startDrag(this.lockCenter, this.bounds);
 		this.dragStarted.dispatch(this);
