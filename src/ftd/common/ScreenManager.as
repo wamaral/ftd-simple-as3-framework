@@ -152,6 +152,11 @@ public class ScreenManager
 		return null;
 	}
 
+	public function getScreenCount():int
+	{
+		return this.screens.length;
+	}
+
 	public function setDefaultScreen(screen:Screen):void
 	{
 		if(this.hasScreen(screen)) {
