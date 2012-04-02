@@ -183,7 +183,7 @@ public class ScreenManager
 				s.visible = true;
 				s.init();
 				changed = s;
-			} else if (s.visible) {
+			} else if (s.visible && i != this.currentScreenIndex) {
 				s.visible = false;
 				s.cleanup();
 			}
