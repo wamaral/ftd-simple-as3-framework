@@ -41,11 +41,17 @@ public class ScreenManager
 		this.currentScreen = this.screens[this.defaultScreenIndex];
 		this.activateScreen();
 	}
+
+	public function restart():void
+	{
+		this.gotoScreenIndex(0);
+	}
 	
 	
 	public function addScreen(screen:Screen, title:String = null):void
 	{
 		screen.index = this.screens.length; // before push
+		screen.cleanup();
 		screen.visible = false;
 		if (title) {
 			screen.title = title;
