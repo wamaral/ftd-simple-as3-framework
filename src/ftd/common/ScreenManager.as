@@ -3,7 +3,7 @@
  */
 package ftd.common
 {
-import flash.events.MouseEvent;
+import flash.events.Event;
 
 import org.osflash.signals.Signal;
 
@@ -42,6 +42,19 @@ public class ScreenManager
 		this.activateScreen();
 	}
 
+
+	public function pause(e:Event = null):void
+	{
+		this.currentScreen.pause();
+	}
+
+
+	public function resume(e:Event = null):void
+	{
+		this.currentScreen.resume();
+	}
+
+
 	public function restart():void
 	{
 		this.gotoScreenIndex(0);
@@ -60,7 +73,7 @@ public class ScreenManager
 	}
 	
 	
-	public function gotoNext(e:MouseEvent = null):void
+	public function gotoNext(e:Event = null):void
 	{
 		if(this.hasNext()) {
 			this.currentScreenIndex++;
@@ -69,7 +82,7 @@ public class ScreenManager
 		}
 	}
 	
-	public function gotoPrev(e:MouseEvent = null):void
+	public function gotoPrev(e:Event = null):void
 	{
 		if(this.hasPrev()) {
 			this.currentScreenIndex--;

@@ -21,19 +21,31 @@ public class Screen extends MovieClip
 
 	public function init():void
 	{
-		;
+		//
 	}
 
 
 	public function cleanup():void
 	{
-		;
+		//
 	}
 
 
 	public function getIndex():int
 	{
 		return this.index;
+	}
+
+
+	public function pause():void
+	{
+		//
+	}
+
+
+	public function resume():void
+	{
+		//
 	}
 }
 }

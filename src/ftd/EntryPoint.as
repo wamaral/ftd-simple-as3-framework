@@ -11,8 +11,6 @@ import ftd.common.Screen;
 import ftd.common.ScreenManager;
 
 import template.Template;
-
-import template.Template;
 import template.event.TemplateEvent;
 
 public class EntryPoint extends MovieClip
@@ -41,7 +39,7 @@ public class EntryPoint extends MovieClip
 	protected function init():void
 	{
 		// don't know why the cast...
-		Template(this.template).instance = this;
+		(this.template as Template).instance = this;
 	}
 
 	protected function screenChanged(screen:Screen):void
@@ -66,22 +64,22 @@ public class EntryPoint extends MovieClip
 
 	protected function credits(e:TemplateEvent):void
 	{
-		//
+		this.pause();
 	}
 
 	protected function instructions(e:TemplateEvent):void
 	{
-		//
+		this.pause();
 	}
 
 	protected function pause(e:Event = null):void
 	{
-		//
+		this.sm.pause();
 	}
 
 	protected function resume(e:Event = null):void
 	{
-		//
+		this.sm.resume();
 	}
 
 	protected function restart(e:Event = null):void
