@@ -3,9 +3,7 @@
  */
 package ftd.common
 {
-import flash.display.MovieClip;
-
-public class Screen extends MovieClip
+public class Screen extends CommonMovieClip
 {
 	public var title:String;
 	internal var index:int;

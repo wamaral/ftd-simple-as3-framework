@@ -3,7 +3,6 @@
  */
 package ftd.common
 {
-import flash.display.MovieClip;
 import flash.events.Event;
 import flash.text.TextField;
 
@@ -15,7 +14,7 @@ import org.osflash.signals.Signal;
 
 import org.osflash.signals.natives.NativeSignal;
 
-public class InputMovieClip extends MovieClip
+public class InputMovieClip extends CommonMovieClip
 {
 	public var input:TextField;
 	public var fixEnabled:Boolean;

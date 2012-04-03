@@ -3,8 +3,10 @@
  */
 package ftd
 {
-import flash.display.MovieClip;
+import flash.display.DisplayObjectContainer;
 import flash.events.Event;
+
+import ftd.common.CommonMovieClip;
 
 import ftd.common.Screen;
 
@@ -13,7 +15,7 @@ import ftd.common.ScreenManager;
 import template.Template;
 import template.event.TemplateEvent;
 
-public class EntryPoint extends MovieClip
+public class EntryPoint extends CommonMovieClip
 {
 	protected var template:Template;
 
@@ -38,8 +40,8 @@ public class EntryPoint extends MovieClip
 
 	protected function init():void
 	{
-		// don't know why the cast...
-		(this.template as Template).instance = this;
+		// don't know why this first cast...
+		(this.template as Template).instance = (this as DisplayObjectContainer);
 	}
 
 	protected function screenChanged(screen:Screen):void
