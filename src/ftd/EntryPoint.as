@@ -5,12 +5,15 @@ package ftd
 {
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;
+import flash.utils.getQualifiedClassName;
 
 import ftd.common.CommonMovieClip;
 
 import ftd.common.Screen;
 
 import ftd.common.ScreenManager;
+
+import template.FactoryModal;
 
 import template.Template;
 import template.event.TemplateEvent;
@@ -21,13 +24,15 @@ public class EntryPoint extends CommonMovieClip
 
 	protected var sm:ScreenManager;
 
-	public function EntryPoint()
+	public function EntryPoint(templateName:Class, isAnim:Boolean = false)
 	{
 		super();
 		this.sm = ScreenManager.get();
 		this.sm.screenChanged.add(this.screenChanged);
 
-		var t:Template = new Template();
+		var credType:String = isAnim ? FactoryModal.VIDEO : FactoryModal.REGULAR;
+		var objName:String = getQualifiedClassName(templateName).match(/(\w+)$/)[1];
+		var t:Template = new Template(credType, objName);
 		t.MEC = false;
 		t.addEventListener(TemplateEvent.INICIAR,    this.start,        false, 0, true);
 		t.addEventListener(TemplateEvent.ABERTA,     this.overlayOpen,  false, 0, true);

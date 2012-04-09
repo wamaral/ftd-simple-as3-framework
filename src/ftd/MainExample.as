@@ -7,7 +7,7 @@ public class MainExample extends EntryPoint
 {
 	public function MainExample()
 	{
-		super();
+		super(CIE_NEC_6_1);
 		this.template.MEC = false;
 		//this.sm.addScreen(this.menu, "menu");
 		this.init();
